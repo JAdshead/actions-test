@@ -4,13 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test:git-history": "commitlint --from origin/main --to HEAD",
     "test": "jest",
-    "lerna:publish": "lerna publish --yes"
+    "lerna:publish": "lerna publish --yes",
+    "prepare": "husky install",
+    "posttest": "npm run test:git-history"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@commitlint/cli": "^16.2.3",
+    "@commitlint/config-conventional": "^16.2.1",
+    "husky": "^7.0.4",
     "lerna": "^4.0.0"
   },
   "dependencies": {
