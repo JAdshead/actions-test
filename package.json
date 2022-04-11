@@ -4,8 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test:git-history": "commitlint --from origin/main --to HEAD",
     "test": "jest",
-    "lerna:publish": "lerna publish --yes"
+    "lerna:publish": "lerna publish --yes",
+    "prepare": "husky install",
+    "posttest": "npm run test:git-history"
   },
   "keywords": [],
   "author": "",
@@ -18,11 +21,5 @@
   },
   "dependencies": {
     "jest": "^27.5.1"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm test",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
   }
 }
