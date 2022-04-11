@@ -28,7 +28,7 @@ jobs:
       - name: Installing Packages
         env:
           NODE_ENV: development
-        run: npm install --frozen-lockfile
+        run: npm ci
       - name: Testing Packages
         run: npm test
       - name: Releasing Packages
@@ -40,4 +40,4 @@ jobs:
           git config user.name "${{ secrets.GIT_AUTHOR_NAME }}"
           git config user.email "${{ secrets.GIT_AUTHOR_EMAIL }}"
           echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> $HOME/.npmrc 2> /dev/null
-          npm lerna:publish
+          npm run lerna:publish

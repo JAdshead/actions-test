@@ -1,25 +1,19 @@
-name: CI
+name: Health Check
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
+  schedule:
+    # At minute 0 past hour 0800 and 2000.
+    - cron:  '0 8,20 * * *'
 
 jobs:
   tests:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: [ '14.x', '16.x' ]
+        node: [ '10.x', '12.x', '14.x' ]
     name: Node ${{ matrix.node }}
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
-        persist-credentials: false
-        ref: ${{ github.event.pull_request.head.sha }}
+    - uses: actions/checkout@v2
     - run: |
         git remote set-branches --add origin main
         git fetch
@@ -28,8 +22,8 @@ jobs:
       with:
         node-version: ${{ matrix.node }}
     - name: Install Dependencies
-      run: yarn
+      run: npm ci
       env:
         NODE_ENV: development
-    - name: Tests
+    - name: Run Test Script
       run: npm test
