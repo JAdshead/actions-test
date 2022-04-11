@@ -1,0 +1,13 @@
+# node + npm + lerna
+**/node_modules
+**/*.log
+*.tgz
+
+# generated files
+test-results
+.jest-cache
+*.tgz
+
+# system
+.DS_Store
+.idea

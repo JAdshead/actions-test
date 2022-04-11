@@ -1,0 +1,15 @@
+{
+  "version": "0.0.0",
+  "packages": [
+    "packages/*"
+  ],
+  "command": {
+    "version": {
+      "conventionalCommits": true,
+      "allowBranch": [
+        "main"
+      ],
+      "message": "chore(release): %v"
+    }
+  }
+}
