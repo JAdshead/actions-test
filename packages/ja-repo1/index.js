@@ -1,3 +1,3 @@
 module.exports = () => {
-  console.log("i dont do anything.")
+  console.log("i dont do anything..")
 }
