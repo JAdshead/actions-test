@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/JAdshead/actions-test/compare/v0.2.0...v0.3.0) (2022-04-12)
+
+
+### Features
+
+* **ja-repo1:** some feature ([#7](https://github.com/JAdshead/actions-test/issues/7)) ([c7a0e51](https://github.com/JAdshead/actions-test/commit/c7a0e515cc5d1256b3187d4d08b89e3d3bbcbb85))
+
+
+
+
+
 # 0.2.0 (2022-04-12)
 
 
