@@ -31,6 +31,14 @@ jobs:
         run: npm ci
       - name: Testing Packages
         run: npm test
+      - name: github-status-action
+        uses: Sibz/github-status-action@v1.1.6
+        with:
+          authToken: ${{secrets.PA_TOKEN}}
+          context: 'Test run'
+          description: 'Passed'
+          state: 'success'
+          sha: ${{github.event.pull_request.head.sha || github.sha}}
       - name: Releasing Packages
         env:
           NODE_ENV: production
