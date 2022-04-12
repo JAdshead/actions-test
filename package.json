@@ -8,6 +8,7 @@
     "test": "jest",
     "lerna:publish": "lerna publish --yes",
     "prepare": "husky install",
+    "postversion": "npm test",
     "posttest": "npm run test:git-history"
   },
   "keywords": [],
